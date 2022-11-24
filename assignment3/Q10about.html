@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q10</title>
+    <style>
+        .list{
+            list-style-type: none;
+            display: inline-block;
+            margin: 2px 2%;
+            border: 1px solid black;
+            padding: 5px 1.3%;
+        }
+        .list a{
+            text-decoration: none;
+            text-align:center;
+            color:black;
+        }
+        .team{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="nav">
+            <li class="list"><a href="Q10.html">Home</a></li>
+            <li class="list"><a href="Q10about.html">About</a></li>
+            <button class="plus">+</button>
+        </ul>
+        <div class="team">
+            <li class="name">Sourav</li>
+            <li class="name">Sushil</li>
+            <li class="name">Vivek</li>
+            <li class="name">Anurag</li>
+        </div>
+        <form name="FName">
+            <label>Name</label>
+            <input type="text" name="name" id="name">
+            <br><br>
+            <label>Email</label>
+            <input type="email" name="email" id="email">
+            <br><br>
+            <button id="btn">Submit</button>
+        </form>
+    </div>
+    <script src="jquery-3.6.1.js"></script>
+    <script>
+        $('.plus').click(function(){
+            $('.team').css("display","block")
+        })
+        $('#btn').click(function(){
+            var a = $('#name').val();
+            var b = $('#email').val();
+            if (a == "") {
+                alert("Please Enter Your Name");
+            }
+
+            if (b == "") {
+                alert("Please Enter Your Email");
+            }
+        })
+    </script>
+</body>
+</html>

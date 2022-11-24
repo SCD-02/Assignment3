@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q9</title>
+    <style>
+        .user, .pc {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline-block;
+            text-align: center;
+        }
+        .h,.win {
+            text-decoration: underline;
+        }
+        .main-div {
+            width:300px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+   <div class="main-div">
+
+        <p>Choose :
+            <input type="radio" name="radio" value="r1" class="r">Rock</input>
+            <input type="radio" name="radio" value="r2" class="r">Paper</input>
+            <input type="radio" name="radio" value="r3" class="r">Scissor</input><br><br>
+            <button class="btn-submit">Submit</button><br>
+            <!-- <span>User: </span>
+            <span class="user-points"></span><br>
+            <span>Computer: </span>
+            <span class="pc-points"></span> -->
+        </p>
+
+        <div>
+            <div class="user">
+                <Span class="h">User</span><br><br>
+                <span class="p-1"></span>
+            </div>
+        
+            <div class="pc">
+                <span class="h">PC</span><br><br>
+                <span class="p-2"></span>
+            </div>
+        </div>
+        
+            <br><br>
+            <span class="win">Winner</span><br>
+            <span class="win-1"></span>
+
+    </div>
+    <script src="jquery-3.6.1.js"></script>
+    <script>
+       $(".btn-submit").click(function(){
+    var inp = $("input[name='radio']:checked").val();
+    var p = Math.random();
+           if(inp=="r1"){
+        $(".p-1").text("Rock");
+
+        if(p<0.333){
+            $(".p-2").text("Rock");
+            $(".win-1").text("Draw");
+        }
+        else if(p<0.666) {
+            $(".p-2").text("Paper");
+            $(".win-1").text("You Lose");
+            // $(".pc-points").text(pointspc++);
+        }
+        else {
+            $(".p-2").text("Scissor");
+            $(".win-1").text("You Won");
+            // $(".user-points").text(pointsuser++);
+        }
+        
+    }
+    if(inp=="r2"){
+        $(".p-1").text("Paper");
+
+        if(p<0.333){
+            $(".p-2").text("Rock");
+            $(".win-1").text("You Won");
+            // $(".user-points").text(pointsuser++);
+        }
+        else if(p<0.666) {
+            $(".p-2").text("Paper");
+            $(".win-1").text("Draw");
+        }
+        else {
+            $(".p-2").text("Scissor");
+            $(".win-1").text("You Lose");
+            // $(".pc-points").text(pointspc++);
+        }
+    }
+    if(inp=="r3"){
+        $(".p-1").text("Scissor");
+
+        if(p<0.333){
+            $(".p-2").text("Rock");
+            $(".win-1").text("You Lose");
+            // $(".pc-points").text(pointspc++);
+        }
+        else if(p<0.666) {
+            $(".p-2").text("Paper");
+            $(".win-1").text("You Won");
+            // $(".user-points").text(pointsuser++);
+        }
+        else {
+            $(".p-2").text("Scissor");
+            $(".win-1").text("Draw");
+        }
+    }
+});
+    </script>
+</body>
+</html>

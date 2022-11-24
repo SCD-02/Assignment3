@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q9</title>
+    <style>
+        button{
+            border: none;
+            margin: 10px;
+            background-image: linear-gradient(to right,rgb(163, 237, 246),rgb(238, 238, 245));
+        }
+        button img{
+            width:100px;
+            height:auto;
+            
+        }
+        .comp-rock,.comp-paper,.comp-scsissors{
+            display: none;
+            width: fit-content;
+        }
+
+        div img{
+            width:100px;
+            height:auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rock - Paper - Scissors</h1>
+        
+        <button class="rock" value="1">
+            <img src="rock1-removebg-preview.png" alt="rock">
+        </button>
+        <button class="paper" value="2">
+            <img src="paper-removebg-preview.png" alt="paper">
+        </button>
+        <button class="scissors" value="3">
+            <img src="scissors-png-removebg-preview (1).png" alt="scissors">
+        </button>
+        <div class="comp-rock" >
+            <img src="rock1-removebg-preview.png" alt="rock">
+        </div>
+        <div class="comp-paper" >
+            <img src="paper-removebg-preview.png" alt="paper">
+        </button>
+        <div class="comp-scissors" >
+            <img src="scissors-png-removebg-preview (1).png" alt="scissors">
+        </div>
+    </div>
+    <script src="jquery-3.6.1.js"></script>
+    <script>
+        $("button").click(function(){
+            let compInp=Math.floor((Math.random()*3)+1);
+            let userInp=$(this).val();
+            console.log(compInp);
+            console.log(userInp);
+            switch(compInp){
+                case 1:
+                    $(".comp-rock").css("display","block");
+                    if(userInp==1){
+                        alert("Draw");
+                    }
+                    else if(userInp==2){
+                        alert("User Wins")
+                    }
+                    else{
+                        alert("Computer Wins")
+                    }
+                    break;
+                case 2:
+                    $(".comp-paper").css("display","block");
+                    if(userInp==1){
+                        alert("Computer Wins");
+                    }
+                    else if(userInp==2){
+                        alert("Draw")
+                    }
+                    else{
+                        alert("User Wins")
+                    }
+                    break;
+                case 3:
+                    $(".comp-scissors").css("display","block");
+                    if(userInp==1){
+                        alert("Draw");
+                    }
+                    else if(userInp==2){
+                        alert("User Wins")
+                    }
+                    else{
+                        alert("Computer Wins")
+                    }
+                    break;
+            }
+            
+            if(compInp==userInp){
+                alert("User Wins")
+            }
+            else{
+                alert("Computer Wins")
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Q6</title>
+    <style>
+        table{
+            border:2px solid black;
+            padding:5px;
+        }
+        table th{
+            border: 1px solid black;
+            margin:0 5px;
+        }
+        table td{
+            border: 1px solid black;
+            margin:0 5px;
+        }
+        .msg{
+            border:2px solid black;
+            padding: 20px;
+            width: max-content;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Regd. No.</th>
+        </thead>
+    </table>
+    <br>
+    <button class="btn1">Add row</button>
+    <br><br>
+    <div class="msg">
+        <label for="name" >Name:
+            <input type="text" class="name">
+        </label>
+        <label for="name">Regd No:
+            <input type="number" class="regd">
+        </label>
+        <button class="submit">Submit</button>
+    </div>
+    <script src="jquery-3.6.1.js"></script>
+    <script>
+        $(".btn1").click(function(){
+            $(".msg").css("display","block");
+            $(".submit").click(function(){
+                let name=$('.name').val();
+                let regd=$('.regd').val();
+                $("table").append("<tr><td>"+name+"</td><td>"+regd+"</td></tr>")
+            })
+        })
+    </script>
+</body>
+</html>
